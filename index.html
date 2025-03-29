@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+       body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* Ensures text is centered by default */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    color: white;
+    width: 90%; /* Ensures it doesn't stretch too much */
+    max-width: 1200px; /* Prevents it from being too wide */
+    margin: 0 auto; /* Centers it */
+}
+
+/* Responsive fix for smaller screens */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+       .menu-icon {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.menu {
+    width: 250px;
+    position: fixed;
+    left: -250px; /* Hidden by default */
+    top: 0;
+    height: 100%;
+    background: white;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    padding-top: 20px;
+    text-align: center; /* Ensures text inside is centered */
+}
+
+/* Ensure menu header is centered */
+.menu .menu-header {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Improve menu links */
+.menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Centers text inside menu items */
+}
+
+/* Hover effect */
+.menu a:hover {
+    background: #f0f0f0;
+}
+
+/* Close button improvements */
+.close-btn {
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
+    display: block;
+    text-align: right;
+    margin-right: 10px;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .menu {
+        width: 200px; /* Reduce menu width on smaller screens */
+    }
+}
+       .container {
+    width: 90%; /* Ensures it doesn’t touch screen edges */
+    max-width: 1200px; /* Prevents it from being too wide */
+    margin: 0 auto; /* Centers the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.container div {
+    margin: 15px 0;
+}
+
+/* Image improvements */
+.container img {
+    max-width: 100%; /* Ensures images don’t overflow */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button improvements */
+.container button {
+    background: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensures text inside button is centered */
+.container button a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Smooth hover effect */
+.container button:hover {
+    background: black;
+    transform: scale(1.05);
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .container {
+        width: 95%; /* Makes better use of space on small screens */
+        padding: 20px;
+    }
+}
+
+.ftr-products {
+    width: 90%; /* Ensures it doesn’t touch screen edges */
+    max-width: 1200px; /* Prevents it from being too wide */
+    margin: 0 auto; /* Centers the section */
+    text-align: center;
+}
+
+.ftr-products div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading styling */
+.ftr-products h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Ensures text is centered */
+}
+
+/* Image improvements */
+.ftr-products img {
+    max-width: 100%; /* Prevents images from overflowing */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.ftr-products img:hover {
+    transform: scale(1.05);
+}
+
+/* Button improvements */
+.ftr-products button {
+    background: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensures text inside button is centered */
+.ftr-products button a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+/* Smooth hover effect */
+.ftr-products button:hover {
+    background: black;
+    transform: scale(1.05);
+}
+
+/* Ensure .container2 is centered */
+.container2 {
+    width: 90%; /* Prevents touching screen edges */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+    .ftr-products,
+    .container2 {
+        width: 95%; /* Makes better use of space on small screens */
+        padding: 20px;
+    }
+}
+
+/* Universal Fix for Centering */
+body, html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .container2 Styling */
+.container2 {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centering the container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.container2 div {
+    margin: 15px 0;
+}
+
+.container2 img {
+    max-width: 100%; /* Makes images responsive */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px white;
+    transition: transform 0.3s ease;
+}
+
+.container2 img:hover {
+    transform: scale(1.05);
+}
+
+.container2 button {
+    background: black;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+}
+
+.container2 button a {
+    text-decoration: none;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container2 button:hover {
+    background: crimson;
+    transform: scale(1.05);
+}
+
+ Motivation Section Styling */
+.motiv/*ation {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px white;
+}
+
+.motivation img {
+    max-width: 100%; /* Responsive Images */
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Fix for Mobile Devices */
+@media (max-width: 768px) {
+    .container2, .motivation {
+        width: 95%; /* Uses almost the full width on smaller screens */
+        padding: 20px;
+    }
+}
+.motivation img:hover {
+    transform: scale(1.05);
+}
+
+.motivation p {
+    font-size: 26px;
+    font-weight: bold;
+    font-style: italic;
+    text-transform: uppercase;
+    max-width: 600px;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.motivation p:last-child {
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+
+        
+
+
+
+      .section7 {
+    text-align: center;
+    padding: 40px;
+    background: black;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-weight: bolder;
+}
+
+/* Heading Styling */
+.section7 h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Link Styling */
+.section7 a {
+    display: inline-block;
+    margin: 15px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+/* Image Styling */
+.section7 a img {
+    width: 60px; /* Increased size for better visibility */
+    height: 60px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.section7 a:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.5); /* Improved hover shadow */
+}
+
+</style>
+
+</style>
+
+
+</head>
+
+
+    
+    <body background="img18.jpg">
+
+        <div class="header">
+            <h1 align = "center">WAR PATH X</h1>
+            <div class="menu-icon" onclick="openMenu()">&#9776;</div>
+        </div>
+    
+        <!-- Sidebar Menu -->
+        <div class="menu" id="sideMenu">
+            <span class="close-btn" onclick="closeMenu()">×</span>
+            <div class="menu-header">XYZ</div>
+            <a href="#">Item 1</a>
+            <a href="#">Item 2</a>
+            <a href="#">Item 3</a>
+            <a href="#">Item 4</a>
+            <a href="#">Item 5</a>
+        </div>
+    
+        <script>
+            function openMenu() {
+                document.getElementById("sideMenu").style.left = "0";
+            }
+    
+            function closeMenu() {
+                document.getElementById("sideMenu").style.left = "-250px";
+            }
+        </script>
+
+<div class="container">
+    <div> <img src="img2.jpg" alt="hello world" width="500" height="300" align = "center"></div>
+    <div> <button> <a href="google.com"> SHOP MMA</a></button></div>
+
+    <div class="container">
+        <div> <img src="img3.jpg" alt="hello world" width="500" height="300" align = "center"></div>
+        <div> <button> <a href="google.com"> SHOP BOXING</a></button></div>
+
+        <div class="container">
+            <div> <img src="img4.jpg" alt="hello world" width="500" height="300" align = "center"></div>
+            <div> <button> <a href="google.com"> SHOP WRESTLING</a></button></div>
+
+            <div class="container">
+                <div> <img src="img5.jpg" alt="hello world" width="500" height="300" align = "center"></div>
+                <div> <button> <a href="google.com"> SHOP MUAY THAI</a></button></div>
+
+                <div class="container">
+                    <div> <img src="img6.jpg" alt="hello world" width="500" height="300" align = "center"></div>
+                    <div> <button> <a href="google.com"> SHOP KIDS</a></button></div>
+                
+                    <div class="ftr-products">
+                        <div> <h2>OUR FEATURED PRODUCTS</h2> </div>
+                        <div> <img src="img8.jpg" width="400" height="400" alt="hello world"></div>
+                        <div>  <button> <a href="https://www.amazon.com/"></a> ZYX PUNCHING BAG! </button> </div>
+                        
+                        <div> <h2>OUR FEATURED PRODUCTS</h2> </div>
+                        <div> <img src="img9.jpg" width="400" height="400" alt="hello world"></div>
+                        <div>  <button> <a href="https://www.amazon.com/"></a> ZYX PUNCHING BAG! </button> </div>
+                        
+                        <div> <h2>OUR FEATURED PRODUCTS</h2> </div>
+                        <div> <img src="img10.jpg" width="400" height="400" alt="hello world"></div>
+                        <div>  <button> <a href="https://www.amazon.com/"></a> ZYX PUNCHING BAG! </button> </div>
+                        
+                        <div> <h2>OUR FEATURED PRODUCTS</h2> </div>
+                        <div> <img src="img11.jpg" width="400" height="400" alt="hello world"></div>
+                        <div>  <button> <a href="https://www.amazon.com/"></a> ZYX PUNCHING BAG! </button> </div>
+                        </div>  
+
+                        <div class="container2">
+                            <div> <img src="img13.jpg" alt="hello" height="300" width="400"></div>
+                            <div> <button> <a href="https://www.amazon.com/"></a> SHOP SPORTSWEAR</button></div>
+                        
+                            <div> <img src="img14.jpg" alt="hello" height="300" width="400"></div>
+                            <div> <button> <a href="https://www.amazon.com/"></a> SHOP COMBAT KIT</button></div>
+                           
+                            <div> <img src="img15.jpg" alt="hello" height="300" width="400"></div>
+                            <div> <button> <a href="https://www.amazon.com/"></a> SHOP STENGHT GEAR</button></div>
+                        </div>    
+
+                        <div class="motivation">
+                            <div> <img src="img17.jpg" alt="hello" height="400" width="400"></div>
+                            <p>" I AM NOT SCARED OF THE MUCSLE BUT I AM SCARED OF THE MINDSET"</p>
+                            <p> - MIKE TYSON</p>
+                            </div>
+
+    
+<div class="section7">
+    <h2>OUR SOCIAL HUB</h2>
+    
+    <a href="https://www.pinterest.com/" target="_blank">
+        <img src="img19.jpg" alt="Pinterest">
+    </a>
+
+    <a href="https://m.facebook.com" target="_blank">
+        <img src="img20.jpg" alt="Facebook">
+    </a>
+
+    <a href="https://www.youtube.com" target="_blank">
+        <img src="img21.jpg" alt="YouTube">
+    </a>
+
+    <a href="https://www.instagram.com" target="_blank">
+        <img src="img22.jpg" alt="Instagram">
+    </a>
+</div>
+<div class="section7">
+     <hr><h2> ABOUT US</h2>
+    <div>
+       <p> Welcome to XYZ Social, your ultimate hub for combat sports enthusiasts, fitness warriors, and gear lovers! </p>
+
+<p>At XYZ Social, we don’t just promote products—we live the fight, breathe the grind, and embrace the warrior’s mindset. Our mission is to bring you the best MMA gear, training essentials, and combat sports accessories through authentic recommendations and expert insights.
+<p>We are active across multiple platforms to keep you informed, inspired, and equipped:</p>
+
+ <p>🔥 Facebook – Join our community of fighters & fitness lovers.</p>
+<p>🎥 YouTube – In-depth reviews, training tips, and combat insights.</p>
+<p>📸 Instagram – Daily motivation, gear highlights, and exclusive deals.</p>
+<p>📝 WordPress – Expert articles, buying guides, and deep dives into the fight world. </p>
+
+<p>Whether you’re a beginner or a seasoned fighter, we’re here to help you choose the best gear, level up your training, and fuel your passion for combat sports. Follow us and become part of the XYZ Social Fight Family!</p>
+
+ <p>💪 Train hard. Fight smart. Gear up with Warpath X. 🥊🔥</p>
+  <div>  <hr><p> Warpath X  &#169 2025</p> </div>
+    </div>
+</div>
+
+    
+</body>
+</html>
